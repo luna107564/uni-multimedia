@@ -1,18 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malla Curricular - Lic. Diseño y Producción Multimedial (UNLaR)</title>
-    <style>
-        /* (Estilos omitidos por brevedad en esta celda; serán incluidos en el archivo) */
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
-    <!-- (Contenido completo del body omitido aquí para brevedad, pero será incluido en el archivo) -->
-    <script>
-        /* (Script JavaScript completo también será incluido en el archivo) */
-    </script>
-</body>
+    <div class="container">
+        <h1>Malla Curricular Interactiva</h1>
+        <h2>Licenciatura en Diseño y Producción Multimedial (UNLaR)</h2>
+        <p>Haz clic en el nombre de la asignatura para "aprobarla". Las materias anuales se consideran aprobadas al final del año.</p>
+        <button class="reset-button" onclick="resetMalla()">Reiniciar Malla</button>
+
+        <div class="year-section" id="year1">
+            <h3>Primer Año</h3>
+            <h4>Anuales</h4>
+            <ul class="course-list">
+                <li class="course-item" id="Historia del arte y el diseño" data-prereqs="">Historia del arte y el diseño</li>
+                <li class="course-item" id="Diseño Gráfico" data-prereqs="">Diseño Gráfico</li>
+                <li class="course-item" id="Fotografía e iluminación" data-prereqs="">Fotografía e iluminación</li>
+                <li class="course-item" id="Inglés I" data-prereqs="">Inglés I</li>
+            </ul>
+            <div class="semester-section">
+                <h4>Primer Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Informática" data-prereqs="">Informática</li>
+                    <li class="course-item" id="Comunicación" data-prereqs="">Comunicación</li>
+                </ul>
+            </div>
+            <div class="semester-section">
+                <h4>Segundo Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Fundamentos de programación" data-prereqs="Informática,Comunicación">Fundamentos de programación</li>
+                    <li class="course-item" id="Semiótica de la imagen" data-prereqs="Comunicación">Semiótica de la imagen</li>
+                    <li class="course-item" id="Redes Multimediales" data-prereqs="Informática">Redes Multimediales</li>
+                    <li class="course-item" id="Sonido y Musicalización I" data-prereqs="Informática,Comunicación">Sonido y Musicalización I</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year-section" id="year2">
+            <h3>Segundo Año</h3>
+            <h4>Anual</h4>
+            <ul class="course-list">
+                <li class="course-item" id="Expresión oral y escrita" data-prereqs="Inglés I">Expresión oral y escrita</li>
+            </ul>
+            <div class="semester-section">
+                <h4>Primer Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Programación I" data-prereqs="Fundamentos de programación,Redes Multimediales">Programación I</li>
+                    <li class="course-item" id="Imagen Digital I" data-prereqs="Diseño Gráfico,Fotografía e iluminación">Imagen Digital I</li>
+                    <li class="course-item" id="Inglés II" data-prereqs="Inglés I">Inglés II</li>
+                    <li class="course-item" id="Sonido y Musicalización II" data-prereqs="Redes Multimediales,Sonido y Musicalización I">Sonido y Musicalización II</li>
+                    <li class="course-item" id="Introducción a la Publicidad" data-prereqs="Historia del arte y el diseño,Diseño Gráfico,Semiótica de la imagen">Introducción a la Publicidad</li>
+                </ul>
+            </div>
+            <div class="semester-section">
+                <h4>Segundo Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Imagen Digital II" data-prereqs="Programación I,Imagen Digital I">Imagen Digital II</li>
+                    <li class="course-item" id="Aplicaciones Multimediales I" data-prereqs="Programación I,Imagen Digital I,Sonido y Musicalización II">Aplicaciones Multimediales I</li>
+                    <li class="course-item" id="Narrativa y guión" data-prereqs="Imagen Digital I,Sonido y Musicalización II">Narrativa y guión</li>
+                    <li class="course-item" id="Arquitectura de la Información" data-prereqs="Inglés II,Introducción a la Publicidad">Arquitectura de la Información</li>
+                    <li class="course-item" id="Programación II" data-prereqs="Programación I,Inglés II">Programación II</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year-section" id="year3">
+            <h3>Tercer Año</h3>
+            <div class="semester-section">
+                <h4>Primer Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Aplicaciones Multimediales II" data-prereqs="Expresión oral y escrita,Imagen Digital II,Aplicaciones Multimediales I">Aplicaciones Multimediales II</li>
+                    <li class="course-item" id="Animación" data-prereqs="Imagen Digital II,Aplicaciones Multimediales I,Programación II">Animación</li>
+                    <li class="course-item" id="Historia del Cine" data-prereqs="Expresión oral y escrita,Narrativa y guión,Arquitectura de la Información">Historia del Cine</li>
+                    <li class="course-item" id="Marketing Digital" data-prereqs="Aplicaciones Multimediales I,Programación II">Marketing Digital</li>
+                    <li class="course-item" id="Técnicas Audiovisuales I" data-prereqs="Imagen Digital II,Aplicaciones Multimediales I">Técnicas Audiovisuales I</li>
+                </ul>
+            </div>
+            <div class="semester-section">
+                <h4>Segundo Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Desarrollo de Aplicaciones Multimediales" data-prereqs="Aplicaciones Multimediales II,Animación">Desarrollo de Aplicaciones Multimediales</li>
+                    <li class="course-item" id="Técnicas Audiovisuales II" data-prereqs="Animación,Técnicas Audiovisuales I">Técnicas Audiovisuales II</li>
+                    <li class="course-item" id="Gestión de Empresas de Diseño" data-prereqs="Historia del Cine,Marketing Digital">Gestión de Empresas de Diseño</li>
+                    <li class="course-item" id="Montaje, Edición y Postproducción" data-prereqs="Historia del Cine,Técnicas Audiovisuales I">Montaje, Edición y Postproducción</li>
+                    <li class="course-item" id="Animación digital" data-prereqs="Animación,Técnicas Audiovisuales I">Animación digital</li>
+                    <li class="course-item" id="Seminario de Actualización I" data-prereqs="Aplicaciones Multimediales II,Marketing Digital">Seminario de Actualización I</li>
+                    <li class="course-item elective" id="ASIGNATURA ELECTIVA I" data-prereqs="Aplicaciones Multimediales II,Animación,Marketing Digital">ASIGNATURA ELECTIVA I
+                        <span class="prerequisite-info">(Diseño de Portfolios, Gestión de Contenidos Multimediales, Diseño Web)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year-section" id="year4">
+            <h3>Cuarto Año</h3>
+            <h4>Anuales</h4>
+            <ul class="course-list">
+                <li class="course-item" id="TV Digital y Nuevos Medios Multimediales" data-prereqs="Técnicas Audiovisuales II,Montaje, Edición y Postproducción">TV Digital y Nuevos Medios Multimediales</li>
+                <li class="course-item" id="Diseño y Desarrollo de Videojuegos" data-prereqs="Desarrollo de Aplicaciones Multimediales,Animación digital">Diseño y Desarrollo de Videojuegos</li>
+                <li class="course-item" id="Formación de Emprendedores" data-prereqs="Gestión de Empresas de Diseño">Formación de Emprendedores</li>
+            </ul>
+            <div class="semester-section">
+                <h4>Primer Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Aplicaciones para Tecnologías Móviles" data-prereqs="Desarrollo de Aplicaciones Multimediales,Animación digital">Aplicaciones para Tecnologías Móviles</li>
+                    <li class="course-item" id="Ética y Principios Juridicos del Diseño" data-prereqs="Gestión de Empresas de Diseño,Montaje, Edición y Postproducción">Ética y Principios Juridicos del Diseño</li>
+                    <li class="course-item" id="Filosofía de las Artes Multimediales" data-prereqs="Seminario de Actualización I,ASIGNATURA ELECTIVA I">Filosofía de las Artes Multimediales</li>
+                    <li class="course-item" id="Producción y Dirección Artística" data-prereqs="Montaje, Edición y Postproducción,ASIGNATURA ELECTIVA I">Producción y Dirección Artística</li>
+                </ul>
+            </div>
+            <div class="semester-section">
+                <h4>Segundo Cuatrimestre</h4>
+                <ul class="course-list">
+                    <li class="course-item" id="Investigación Aplicada" data-prereqs="Ética y Principios Juridicos del Diseño,Filosofía de las Artes Multimediales">Investigación Aplicada</li>
+                    <li class="course-item" id="Tecnologias para desarrollos Educativos" data-prereqs="Aplicaciones para Tecnologías Móviles,Ética y Principios Juridicos del Diseño">Tecnologias para desarrollos Educativos</li>
+                    <li class="course-item elective" id="ASIGNATURA ELECTIVA II" data-prereqs="Filosofía de las Artes Multimediales,Producción y Dirección Artística">ASIGNATURA ELECTIVA II
+                        <span class="prerequisite-info">(Efectos Especiales digitales, Estereoscopía y Cine 3D, Gestión y Organización de Grandes Eventos)</span>
+                    </li>
+                    <li class="course-item" id="Seminario de Actualización II" data-prereqs="Aplicaciones para Tecnologías Móviles,Filosofía de las Artes Multimediales">Seminario de Actualización II</li>
+                    <li class="course-item" id="Trabajo Final de Carrera" data-prereqs="TV Digital y Nuevos Medios Multimediales,Diseño y Desarrollo de Videojuegos,Formación de Emprendedores,Investigación Aplicada,Tecnologias para desarrollos Educativos,ASIGNATURA ELECTIVA II,Seminario de Actualización II">Trabajo Final de Carrera</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
 </html>
